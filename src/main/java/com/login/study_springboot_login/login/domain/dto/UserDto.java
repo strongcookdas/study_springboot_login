@@ -13,5 +13,12 @@ public class UserDto {
     private Long id;
     private String userName;
     private String password;
-    private String email;
+    private String emailAddress;
+
+    public UserJoinResponse toResponse(){
+        return UserJoinResponse.builder()
+                .userName(this.userName)
+                .emailAddress(this.emailAddress)
+                .build();
+    }
 }
