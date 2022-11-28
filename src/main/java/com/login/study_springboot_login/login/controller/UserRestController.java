@@ -19,7 +19,7 @@ public class UserRestController {
     private final UserService userService;
 
     @PostMapping("/join")
-    public Response<UserJoinResponse> join(@RequestBody UserJoinRequest userJoinRequest) {
+    public Response<UserJoinResponse> join(@RequestBody UserJoinRequest userJoinRequest){
         UserDto userDto = userService.join(userJoinRequest);
         return Response.success(userDto.toResponse());
     }
